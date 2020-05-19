@@ -2,7 +2,7 @@
 ## Description
 A tip calculator used to calculate tips given an amount of money. (Alternatively, it can be used to calculate sales tax.)
 
-![Program Image #1](Image1.png)
+<img src="Image1.png" width="250" height="500" />
 
 ### How to use the program:
 - Enter in the total value you want to tip in "Enter Amount"
@@ -10,4 +10,4 @@ A tip calculator used to calculate tips given an amount of money. (Alternatively
 - The result of the calculation should then show on the screen includeing the tip amount
 and the total amount
 
-![Program Image #2](Image2.png)
+<img src="Image2.png" width="250" height="500" />
