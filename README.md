@@ -21,7 +21,6 @@ and the total amount
 
 ### How to try it on your computer
 - You will need to have Android Studio Installed, either on Linux, Windows or Mac
-- Git clone this Repository, find the `.apk` file located in the directory
-- Drag the `app-debug.apk` file to an an Android AVD Emulator Instance
+- Git clone this Repository and build it on Android Studio
 - Enjoy the app!
 
