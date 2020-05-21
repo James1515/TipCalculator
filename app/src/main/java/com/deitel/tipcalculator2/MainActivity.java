@@ -19,10 +19,15 @@ public class MainActivity extends Activity {
 
     private double billAmount = 0.0;
     private double percent = 0.15;
+    private double percent_tax = 0.07;
+    private int party_size = 0;
+
     private TextView amountTextView;
     private TextView percentTextView;
     private TextView tipTextView;
     private TextView totalTextView;
+
+    private TextView afterTaxTotalView;
 
 
     @Override
@@ -32,15 +37,20 @@ public class MainActivity extends Activity {
 
         //get references to programmatically manipulated textviews
         amountTextView = (TextView) findViewById(R.id.amountTextView);
+
+
         percentTextView = (TextView) findViewById(R.id.percentTextView);
         tipTextView = (TextView) findViewById(R.id.tipTextView);
         totalTextView = (TextView) findViewById(R.id.totalTextView);
         tipTextView.setText(currencyFormat.format(0));
         totalTextView.setText(currencyFormat.format(0));
+        afterTaxTotalView = (TextView) findViewById(R.id.totalAfterTaxTextView);
+
 
         //Set amountEditText's TextWatcher
         EditText amountEditText = (EditText) findViewById(R.id.amountEditText);
         amountEditText.addTextChangedListener(amountEditTextWatcher);
+
         //Set percentSeekBar's OnSeekBarChangeListener
         SeekBar percentSeekBar =
                 (SeekBar) findViewById(R.id.percentSeekBar);
@@ -54,14 +64,25 @@ public class MainActivity extends Activity {
         percentTextView.setText(percentFormat.format(percent));
 
         //calculate the tip and the total
-        double tip, total;
+        double tip, total, tax, totalAfterTax;
         tip = billAmount * percent;
         total = billAmount + tip;
+        tax = billAmount * percent_tax;
+        totalAfterTax = billAmount + tip + tax;
+
+        if(party_size > 0)
+        {
+            totalAfterTax = totalAfterTax / party_size;
+        }
+
 
         //Display the tip and total formatted as currency:
         tipTextView.setText(currencyFormat.format(tip));
         totalTextView.setText(currencyFormat.format(total));
+        afterTaxTotalView.setText(currencyFormat.format(totalAfterTax));
     }
+
+
 
     //Listener object for the SeekBar's progress changed events:
     private final OnSeekBarChangeListener seekBarListener =
@@ -106,4 +127,6 @@ public class MainActivity extends Activity {
         @Override
         public void afterTextChanged(Editable s) {}
     };
+
+
 }

@@ -3,5 +3,7 @@
     <string name="enter_amount">Enter Amount</string>
     <string name="tip_percentage">15%</string>
     <string name="tip">Tip</string>
-    <string name="total">Total</string>
+    <string name="total">Total Before Tax:</string>
+    <string name="after_tax">Total After Tax:</string>
+    <string name="enter_party">Enter Party Size:</string>
 </resources>
